@@ -3,6 +3,7 @@ public class Manusia {
     private String NIK;
     private boolean menikah;
     private boolean jenisKelamin;
+    private double pendapatan;
 
     public void setNama(String nama){
         this.nama = nama;
@@ -36,7 +37,15 @@ public class Manusia {
         return this.jenisKelamin;
     }
 
-    public int getTunjangan(){
+    public void setPendapatan(double pendapatan){
+        this.pendapatan = pendapatan;
+    }
+
+    public double getPendapatan(){
+        return this.pendapatan + this.getTunjangan();
+    }
+
+    public double getTunjangan(){
         if(menikah && jenisKelamin){
             return 25;
         } else if(menikah && !jenisKelamin){
@@ -51,7 +60,7 @@ public class Manusia {
         String gender = (jenisKelamin) ? "Laki-Laki" : "Perempuan";
         System.out.println("Jenis Kelamin : " + gender);
         System.out.println("NIK : " + this.NIK);
-        System.out.println("Pendapatan: " + this.getTunjangan());
+        System.out.println("Pendapatan: " + this.getPendapatan());
     }
 
 }
