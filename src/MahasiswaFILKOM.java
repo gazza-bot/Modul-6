@@ -18,7 +18,7 @@ public class MahasiswaFILKOM extends Manusia {
 
     public String getStatus() {
         String angkatan = this.nim.substring(0, 2);
-        int prodi = Integer.parseInt(this.nim.substring(5, 6));
+        int prodi = Integer.parseInt(this.nim.substring(6, 7));
         String prodiString = "";
         switch (prodi) {
             case 2 -> {
@@ -63,5 +63,6 @@ public class MahasiswaFILKOM extends Manusia {
         System.out.println("NIM : " + this.nim);
         System.out.printf("IPK : %.2f\n", this.ipk);
         System.out.println("Status : " + this.getStatus());
+        System.out.println("Beasiswa : " + this.getBeasiswa() + "\n");
     }
 }

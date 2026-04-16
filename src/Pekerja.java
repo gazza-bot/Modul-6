@@ -61,7 +61,7 @@ public class Pekerja extends Manusia {
         System.out.println("Jenis Kelamin : " + gender);
         System.out.println("NIK : " + this.getNIK());
         System.out.println("Tahun Masuk : " + this.getTahunMasuk());
-        System.out.println("Jumlah Anak" + this.jumlahAnak);
+        System.out.println("Jumlah Anak : " + this.jumlahAnak);
         System.out.println("Gaji : " + this.getGaji());
     }
 }
