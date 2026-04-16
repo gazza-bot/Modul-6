@@ -1,7 +1,8 @@
 public class Manager extends Manusia {
     private String departemen;
 
-    public Manager(String depart){
+    public Manager(String nama, String nik,boolean menikah,boolean jenisKelamin,String depart){
+        super(nama, nik, menikah, jenisKelamin);
         this.departemen = depart;
     }
 
@@ -15,7 +16,10 @@ public class Manager extends Manusia {
 
     @Override
     public void display(){
-        super.display();
+        System.out.println("Nama : " + this.getNama());
+        String gender = (this.gender()) ? "Laki-Laki" : "Perempuan";
+        System.out.println("Jenis Kelamin : " + gender);
+        System.out.println("NIK : " + this.getNIK());
         System.out.println("Departemen : " + this.departemen);
     }
 }

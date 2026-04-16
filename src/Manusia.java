@@ -5,6 +5,13 @@ public class Manusia {
     private boolean jenisKelamin;
     private double pendapatan;
 
+    public Manusia(String nama, String nik, boolean menikah, boolean jenisKelamin){
+        this.nama = nama;
+        this.NIK = nik;
+        this.menikah = menikah;
+        this.jenisKelamin = jenisKelamin;
+    }
+
     public void setNama(String nama){
         this.nama = nama;
     }

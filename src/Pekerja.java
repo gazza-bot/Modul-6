@@ -5,8 +5,8 @@ public class Pekerja extends Manusia {
     private LocalDate tahunMasuk;
     private int jumlahAnak;
 
-    public Pekerja(double gaji,String tahunMasuk, int jumlahAnak){
-        super();
+    public Pekerja(String nama, String nik, boolean menikah, boolean jenisKelamin, double gaji,String tahunMasuk, int jumlahAnak){
+        super(nama, nik, menikah, jenisKelamin);
         this.gaji = gaji;
         this.tahunMasuk = LocalDate.parse(tahunMasuk);
         this.jumlahAnak = jumlahAnak;
@@ -41,8 +41,7 @@ public class Pekerja extends Manusia {
     public double getBonus(){
         LocalDate now = LocalDate.now();
         int tahunSekarang = now.getYear();
-        int tahunMasuk = this.getTahunMasuk();
-        int lamaKerja = tahunSekarang - tahunMasuk;
+        int lamaKerja = tahunSekarang - this.getTahunMasuk();
         
         if(lamaKerja < 5 && lamaKerja > 0){
             return this.gaji * 0.05;
@@ -57,7 +56,10 @@ public class Pekerja extends Manusia {
 
     @Override
     public void display(){
-        super.display();
+        System.out.println("Nama : " + this.getNama());
+        String gender = (this.gender()) ? "Laki-Laki" : "Perempuan";
+        System.out.println("Jenis Kelamin : " + gender);
+        System.out.println("NIK : " + this.getNIK());
         System.out.println("Tahun Masuk : " + this.getTahunMasuk());
         System.out.println("Jumlah Anak" + this.jumlahAnak);
         System.out.println("Gaji : " + this.getGaji());
